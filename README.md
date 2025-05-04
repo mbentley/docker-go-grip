@@ -14,3 +14,9 @@ docker run -it --rm \
   -v "${PWD}:/data" \
   mbentley/go-grip
 ```
+
+To create a bash alias:
+
+```bash
+alias go-grip='docker run -it --rm -p 6419:6419 --mount type=bind,source="${PWD}",destination=/data,readonly=true mbentley/go-grip'
+```

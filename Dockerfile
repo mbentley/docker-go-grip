@@ -1,6 +1,7 @@
 FROM golang:alpine AS build
 
-ARG GO_GRIP_VERSION=latest
+ARG GO_GRIP_VERSION=main
+ARG LATEST_COMMIT
 
 RUN mkdir /data &&\
   echo "# go-grip" > /data/README.md &&\

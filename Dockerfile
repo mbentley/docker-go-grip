@@ -19,4 +19,4 @@ COPY --from=build /go/bin/go-grip /
 
 WORKDIR /data
 ENTRYPOINT ["/go-grip"]
-CMD ["-b=false"]
+CMD ["-b=false","-H","0.0.0.0"]

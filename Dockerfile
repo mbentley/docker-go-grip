@@ -10,7 +10,8 @@ RUN mkdir /data &&\
   echo &&\
   echo "For usage info; see [mbentley/go-grip](https://github.com/mbentley/docker-go-grip)" >> /data/README.md
 
-RUN go install github.com/chrishrb/go-grip@"${GO_GRIP_VERSION}"
+RUN --mount=type=cache,target=/go/pkg/mod --mount=type=cache,target=/root/.cache/go-build \
+  go install github.com/chrishrb/go-grip@"${GO_GRIP_VERSION}"
 
 FROM scratch
 
